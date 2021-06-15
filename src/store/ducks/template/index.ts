@@ -1,27 +1,33 @@
-import { Reducer } from 'redux';
-import { TemplateState, TemplateTypes } from './types';
+import { Reducer } from 'redux'
+import { TemplateState, TemplateTypes } from './types'
 
 const INITIAL_STATE: TemplateState = {
   data: [],
   error: false,
-  loading: false,
-};
+  loading: false
+}
 
 const reducer: Reducer<TemplateState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TemplateTypes.LOAD_REQUEST:
-      return { ...state, loading: true };
+      return { ...state, loading: true }
     case TemplateTypes.LOAD_SUCCESS:
       return {
-      ...state, loading: false, error: false, data: action.payload.data,
-      };
+        ...state,
+        loading: false,
+        error: false,
+        data: action.payload.data
+      }
     case TemplateTypes.LOAD_FAILURE:
       return {
-      ...state, loading: false, error: true, data: [],
-      };
+        ...state,
+        loading: false,
+        error: true,
+        data: []
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default reducer;
+export default reducer

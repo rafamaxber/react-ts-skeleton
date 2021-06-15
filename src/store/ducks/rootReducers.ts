@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import template from './template';
+import template from './template'
 
 export default combineReducers({
-  template,
-});
+  template
+})

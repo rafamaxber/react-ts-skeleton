@@ -1,9 +1,9 @@
-import { TemplateRepositoryType } from '../types';
+import { TemplateRepositoryType } from '../types'
 
 export default (): TemplateRepositoryType => ({
   async fetchPosts() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
 
-    return response.json();
-  },
-});
+    return response.json()
+  }
+})

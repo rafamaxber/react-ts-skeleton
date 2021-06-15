@@ -8,7 +8,9 @@ module.exports = {
     'react-app',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
+    'eslint-config-prettier',
+    'plugin:import/typescript',
   ],
   globals: {
     Atomics: 'readonly',
@@ -31,7 +33,10 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off'
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    'import/extensions': 'off',
+    'import/named': 'off',
+    'import/no-unresolved': 'off',
   },
   settings: {
     'import/resolver': 'parcel',
@@ -40,8 +45,8 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        paths: ['src', 'src/images']
+        paths: ['src', 'src/images', 'src/business-rules', 'src/store']
       }
     }
   }
-};
+}

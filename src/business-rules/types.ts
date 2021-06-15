@@ -3,11 +3,11 @@
 // }
 
 export interface TemplateRepositoryType {
-  fetchPosts: () => Promise<any>,
+  fetchPosts: () => Promise<any>
 }
 
 export interface TemplateDomainType {
-  fetchPosts: () => Promise<any>,
+  fetchPosts: () => Promise<any>
 }
 
 export interface RepositoryType {
