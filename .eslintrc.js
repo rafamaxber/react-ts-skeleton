@@ -1,52 +1,26 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-    jest: true
+  settings: {
+    react: {
+      version: 'detect'
+    }
   },
   extends: [
-    'react-app',
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'eslint-config-prettier',
-    'plugin:import/typescript',
+    'standard-with-typescript',
+    'plugin:react/recommended'
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
+  plugins: ['react'],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 2018,
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
     sourceType: 'module'
   },
-  plugins: ['react', 'import', 'jsx-a11y'],
   rules: {
-    'react/jsx-filename-extension': [
-      'error',
-      {
-        extensions: ['.tsx']
-      }
-    ],
-    'import/prefer-default-export': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    'import/extensions': 'off',
-    'import/named': 'off',
-    'import/no-unresolved': 'off',
-  },
-  settings: {
-    'import/resolver': 'parcel',
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
-    },
-    'import/resolver': {
-      typescript: {
-        paths: ['src', 'src/images', 'src/business-rules', 'src/store']
-      }
-    }
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/no-redeclare': ['off'],
+    '@typescript-eslint/strict-boolean-expressions': ['off'],
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error'
   }
 }
